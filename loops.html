@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.write("Operators<br/>");
+      document.write(2 + 3);
+      document.write("<Br/>Escape Character");
+      var title = "Name\t Age \t City";
+      document.write("<br/>" + title);
+    </script>
+    <script>
+      document.writeln("<br/>flow control");
+
+      //* if else statement */
+      if (2 > 1) {
+        document.writeln("<br/>2 is greater than 1");
+      } else {
+        document.writeln("<br/>1 is greater than 2");
+      }
+
+      //Switch statement
+      var day = 2;
+      switch (day) {
+        case 1:
+          document.writeln("<br/>Sunday");
+          break;
+        case 2:
+          document.writeln("<br/>Monday");
+          break;
+
+        case 3:
+          document.writeln("<br/>Tuesday");
+          break;
+        case 4:
+          document.writeln("<br/>Wednesday");
+          break;
+        case 5:
+          document.writeln("<br/>Thursday");
+          break;
+        case 6:
+          document.writeln("<br/>Friday");
+          break;
+        case 7:
+          document.writeln("<br/>Saturday");
+          break;
+        default:
+          document.writeln("<br/>Invalid day");
+          break;
+      }
+      //Tenery operator
+        var age = 20;
+        var result = age >= 18 ? "Adult" : "Minor";
+        document.writeln("<br/>" + result);
+      //Looping in JS
+//while loop
+var i=0
+while(i<5){
+    document.writeln("<br/>"+(i+1)+" Hello World");
+    i++;
+}
+//do while loop
+var j=0;
+do{
+    document.writeln("<br/>"+(j+1)+" Hello World");
+    j++;
+}while(j<5);
+    //for loop
+for(var k=0;k<5;k++){
+    document.writeln("<br/>"+(k+1)+" Hello World");
+}
+</script>
+  </body>
+</html>
