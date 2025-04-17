@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    <form action="">
+      <input type="number" id="number" placeholder="Enter a number" />
+      <input type="button" value="submit" onclick="print()" />
+    </form>
+    <form action="">
+        Male: <input type="radio" name="gender" id="male"/>
+        Female: <input type="radio" name="gender" id="female"/>
+        <input type="button" value="ok" onclick="totalGender()" />
+    </form>
+    <p id="demo">XYZ</p>
+    <input type="button" value="submit" onclick="show()">
+    <script>
+      //Body manipulation
+      // Change the background color and text color of the body element
+      var x = document.getElementById("body");
+      x.style.backgroundColor = "red";
+      x.style.color = "white";
+
+
+      //Form field
+      function print() {
+        var number = document.getElementById("number").value;
+        alert("The number is: " + number);
+      }
+
+     //Gender form
+     function totalGender(){
+        var gender = document.getElementsByName("gender");
+        var selectedGender = "";
+        for (var i = 0; i < gender.length; i++) {
+          if (gender[i].checked) {
+            selectedGender = gender[i].id;
+            break;
+          }
+        }
+        if (selectedGender) {
+          alert("Selected gender: " + selectedGender);
+        } else {
+          alert("No gender selected");
+        }
+     }
+
+     //P tag and its input 
+     function show(){
+        var strig="This is my string"
+        document.getElementById("demo").innerHTML=strig;
+     }
+    </script>
+  </body>
+</html>
