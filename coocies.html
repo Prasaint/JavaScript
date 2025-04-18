@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Example</title>
+</head>
+<body>
+    <h1>JavaScript Cookies Example</h1>
+    <script>
+        // Setting a cookie
+        document.cookie = "username=JohnDoe";
+
+        // Setting a cookie with an expiration date
+        document.cookie = "user=JaneDoe; expires=Fri, 31 Dec 2023 23:59:59 GMT";
+
+        // Setting a cookie with a path
+        document.cookie = "theme=dark; path=/";
+
+        // Updating a cookie
+        document.cookie = "username=JohnDoeUpdated";
+
+        // Deleting a cookie by setting its expiration date to the past
+        document.cookie = "username=JohnDoe; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+        // Setting multiple cookies
+        document.cookie = "language=English";
+        document.cookie = "location=USA";
+
+        // Function to get a specific cookie by name
+        function getCookie(name) {
+            const cookies = document.cookie.split('; ');
+            for (let cookie of cookies) {
+                const [key, value] = cookie.split('=');
+                if (key === name) {
+                    return value;
+                }
+            }
+            return null;
+        }
+
+        // Function to delete a specific cookie
+        function deleteCookie(name) {
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+        }
+
+        // Example usage of deleteCookie function
+        deleteCookie("location");
+
+        // Display all cookies
+        document.write("<h2>All Cookies:</h2>");
+        document.write("<p>" + document.cookie + "</p>");
+
+        // Display a specific cookie
+        const languageCookie = getCookie("language");
+        document.write("<h2>Language Cookie:</h2>");
+        document.write("<p>" + (languageCookie ? languageCookie : "Not Found") + "</p>");
+        document.write("<p>" + (languageCookie ? languageCookie : "Not Found") + "</p>");
+    </script>
+</body>
+</html>
