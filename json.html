@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Examples</title>
+</head>
+<body>
+    <h1>Simple JSON Examples</h1>
+    <div id="output"></div>
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        // Example 1: Basic JSON Object
+        const person = {
+            "name": "John Doe",
+            "age": 30,
+            "isEmployed": true
+        };
+        outputDiv.innerHTML += `<h2>Person:</h2><pre>${JSON.stringify(person, null, 2)}</pre>`;
+
+        // Example 2: JSON Array
+        const fruits = ["Apple", "Banana", "Cherry"];
+        outputDiv.innerHTML += `<h2>Fruits:</h2><pre>${JSON.stringify(fruits, null, 2)}</pre>`;
+
+        // Example 3: Nested JSON Object
+        const company = {
+            "name": "TechCorp",
+            "location": "New York",
+            "employees": [
+                { "name": "Alice", "role": "Developer" },
+                { "name": "Bob", "role": "Designer" }
+            ]
+        };
+        outputDiv.innerHTML += `<h2>Company:</h2><pre>${JSON.stringify(company, null, 2)}</pre>`;
+
+        // Example 4: JSON Stringify
+        const jsonString = JSON.stringify(person);
+        outputDiv.innerHTML += `<h2>JSON String:</h2><pre>${jsonString}</pre>`;
+
+        // Example 5: JSON Parse
+        const jsonParsed = JSON.parse('{"name": "Jane", "age": 25}');
+        outputDiv.innerHTML += `<h2>Parsed JSON:</h2><pre>${JSON.stringify(jsonParsed, null, 2)}</pre>`;
+    </script>
+</body>
+</html>
