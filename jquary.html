@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Examples</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Examples</h1>
+
+    <!-- Example 1: Hide and Show -->
+    <h2>Hide and Show Example</h2>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <p id="text">This is a paragraph to hide and show.</p>
+
+    <!-- Example 2: Add and Remove Class -->
+    <h2>Add and Remove Class Example</h2>
+    <button id="addClass">Add Highlight</button>
+    <button id="removeClass">Remove Highlight</button>
+    <p id="classExample">This is a paragraph to add and remove class.</p>
+
+    <!-- Example 3: Toggle -->
+    <h2>Toggle Example</h2>
+    <button id="toggle">Toggle Visibility</button>
+    <p id="toggleText">This is a paragraph to toggle visibility.</p>
+
+    <!-- Example 4: Event Handling -->
+    <h2>Event Handling Example</h2>
+    <button id="clickMe">Click Me</button>
+    <p id="clickMessage"></p>
+
+    <!-- Example 5: AJAX Request -->
+    <h2>AJAX Example</h2>
+    <button id="loadData">Load Data</button>
+    <div id="dataContainer"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Example 1: Hide and Show
+            $("#hide").click(function () {
+                $("#text").hide();
+            });
+            $("#show").click(function () {
+                $("#text").show();
+            });
+
+            // Example 2: Add and Remove Class
+            $("#addClass").click(function () {
+                $("#classExample").addClass("highlight");
+            });
+            $("#removeClass").click(function () {
+                $("#classExample").removeClass("highlight");
+            });
+
+            // Example 3: Toggle
+            $("#toggle").click(function () {
+                $("#toggleText").toggle();
+            });
+
+            // Example 4: Event Handling
+            $("#clickMe").click(function () {
+                $("#clickMessage").text("Button was clicked!");
+            });
+
+            // Example 5: AJAX Request
+            $("#loadData").click(function () {
+                $("#dataContainer").load("https://jsonplaceholder.typicode.com/posts/1", function (response, status, xhr) {
+                    if (status === "success") {
+                        $(this).text(response);
+                    } else {
+                        $(this).text("Failed to load data.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
